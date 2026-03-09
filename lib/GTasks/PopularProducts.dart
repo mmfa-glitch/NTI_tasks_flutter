@@ -13,7 +13,7 @@ class PopularProducts extends StatelessWidget {
           crossAxisCount: 2,
           crossAxisSpacing: 15,
           mainAxisSpacing: 15,
-          childAspectRatio: 0.75,
+          childAspectRatio: 1,
         ),
         itemBuilder: (context, index) {
           return Container(
@@ -34,11 +34,12 @@ class PopularProducts extends StatelessWidget {
                           child: Image.asset(
                             'Assets/Images/aa.png',
                             fit: BoxFit.cover,
+                            width: double.infinity,
                           ),
                         ),
                       ),
                       Positioned(
-                        left: 15,
+                        left: 5,
                         top: 5,
                         child: Container(
                           padding: EdgeInsets.symmetric(
@@ -60,7 +61,7 @@ class PopularProducts extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        right: 15,
+                        right: 5,
                         top: 5,
                         child: Container(
                           decoration: BoxDecoration(
@@ -75,7 +76,7 @@ class PopularProducts extends StatelessWidget {
                       ),
                       const SizedBox(height: 10),
                       Positioned(
-                        left: 10,
+                        left: 0,
                         bottom: 0,
                         child: const Text(
                           "Product Name",
@@ -87,7 +88,7 @@ class PopularProducts extends StatelessWidget {
                       ),
 
                       Positioned(
-                        right: 15,
+                        right: 0,
                         bottom: 0,
                         child: Text(
                           "LE 120",

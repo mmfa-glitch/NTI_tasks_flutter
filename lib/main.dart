@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'widget_screens.dart' as ws;
 import 'package:flutter_review/GTasks/MainMenu.dart';
-import 'package:flutter_review/GTasks/StoreHomeScreen.dart';
+import 'package:flutter_review/GTasks/StoreHome.dart';
+import 'package:flutter_review/InSessionTasks/UserProfile.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -12,11 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Review',
       theme: ThemeData(
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: StoreHomeScreen(), //MainMenu()// MyHomePage(title: 'Whatever!!!'),
+      home: Userprofile()// StoreHome()//StoreHomeScreen(), //MainMenu()// MyHomePage(title: 'Whatever!!!'),
     );
   }
 }

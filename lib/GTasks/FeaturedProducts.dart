@@ -43,7 +43,7 @@ class _PromoSectionState extends State<Featuredproducts> {
                 Expanded(
                   child: Text(item["title"]!, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18,),),),
                 Expanded(
-                  child: Image.asset(item["image"]!, fit: BoxFit.contain,),)
+                  child: Image.asset(item["image"]!, fit: BoxFit.cover, width: double.infinity,),)
               ],
             ),
           );
@@ -69,5 +69,10 @@ class _PromoSectionState extends State<Featuredproducts> {
         ),
       ],
     );
+  }
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 }
