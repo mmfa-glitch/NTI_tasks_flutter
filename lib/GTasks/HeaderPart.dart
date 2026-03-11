@@ -5,13 +5,13 @@ class HeaderPart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(20),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [Color(0xff5C6BC0), Color(0xff3F51B5)],
+          colors: [?Colors.indigo[200], ?Colors.indigo[800]],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-        borderRadius: BorderRadius.vertical(bottom: Radius.circular(30)),
+        borderRadius: const BorderRadius.vertical(bottom: Radius.circular(30)),
 
         //let's see whether to set corner radius for this or the next element in the H.View
 

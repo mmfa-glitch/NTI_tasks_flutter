@@ -6,6 +6,7 @@ import 'package:flutter_review/GTasks/PopularProducts.dart';
 import 'package:flutter_review/GTasks/SectionTitle.dart';
 import 'package:flutter_review/GTasks/EmptyScreen.dart';
 import 'package:flutter_review/GTasks/StoreHomeScreen.dart';
+import 'package:flutter_review/GTasks/CarouselSection.dart';
 
 class Storehomescreen extends StatelessWidget{
 
@@ -16,9 +17,13 @@ class Storehomescreen extends StatelessWidget{
         child: Column(
           children: [
             HeaderPart(),
+            Sectiontitle('Categories', 0, 5),
             PopularCategories(),
+            Sectiontitle('', 0, 0, showViewAllTextButton: false,),
+            Carouselsection(),
+            Sectiontitle('Featured Products', 20, 5),
             Featuredproducts(),
-            Sectiontitle(),
+            Sectiontitle('Popular Products', 20,5),
             PopularProducts(),
           ],
         ),

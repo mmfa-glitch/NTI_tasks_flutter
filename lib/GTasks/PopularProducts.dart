@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PopularProducts extends StatelessWidget {
+  bool favButtonPressed = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,7 +20,7 @@ class PopularProducts extends StatelessWidget {
           return Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: Colors.indigo[200],
+              color: Colors.indigo[400],
             ),
             padding: const EdgeInsets.all(10),
             child: Column(
@@ -70,7 +71,7 @@ class PopularProducts extends StatelessWidget {
                           ),
                           child: IconButton(
                             onPressed: () {},
-                            icon: Icon(Icons.favorite_border),
+                            icon: Icon(Icons.favorite_border, color: Colors.blueGrey,),
                           ),
                         ),
                       ),
@@ -94,10 +95,23 @@ class PopularProducts extends StatelessWidget {
                           "LE 120",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.orange[100],
+                            color: Colors.orange[200],
                           ),
                         ),
                       ),
+                      Positioned(
+                        left: 0,
+                        bottom: 25,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(Icons.star, color: Colors.amber[500], size: 15,),
+                            Icon(Icons.star, color: Colors.amber[500], size: 15,),
+                            Icon(Icons.star, color: Colors.amber[500], size: 15,),
+                            const Icon(Icons.star, color: Colors.white60, size: 15,),
+                            const Icon(Icons.star, color: Colors.white60, size: 15,),
+                          ],
+                        ),),
                     ],
                   ),
                 ),

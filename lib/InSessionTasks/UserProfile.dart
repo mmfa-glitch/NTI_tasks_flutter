@@ -1,109 +1,115 @@
 import 'package:flutter/material.dart';
 
-class Userprofile extends StatelessWidget
-{
+class Userprofile extends StatelessWidget {
+
+  Widget buildInput(String label, {bool multiline = false}) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+
+          Text(label, style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.indigo[800],),),
+
+          const SizedBox(height: 6),
+
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            decoration: BoxDecoration(
+              color: Colors.grey.shade200,
+              borderRadius: BorderRadius.circular(12),
+            ),
+
+            child: Row(
+              children: [
+
+                Expanded(
+                  child: TextField(
+                    maxLines: multiline ? 4 : 1,
+                    decoration: const InputDecoration(
+                      border: InputBorder.none,
+                    ),
+                  ),
+                ),
+
+                IconButton(
+                  icon: Icon(Icons.arrow_forward_ios, size: 16, color: Colors.indigo[800],),
+                  onPressed: () {},
+                )
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
-      appBar: AppBar(title: Text('Edit Profile', style: TextStyle(fontWeight: FontWeight.bold,),),centerTitle: true,),
-      body: SafeArea(child: Column(
-      children: [
-        SizedBox(width: 25, height: 25,),
-        Center(
-            child: CircleAvatar(
-              backgroundColor: Colors.indigo[75], radius: 75,
-              foregroundImage: AssetImage('Assets/Images/aa.png',),
-            ),
+
+      appBar: AppBar(
+        title: const Text(
+          "Edit Profile",
+          style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        SizedBox(width: 25, height: 25,),
-        //first input
-        Padding(padding: EdgeInsetsGeometry.fromLTRB(10, 10, 5, 0),
-        child: Container(
+        centerTitle: true,
+      ),
+
+      body: SafeArea(
+
+        child: SingleChildScrollView(
+
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                child:  Text('User Name', textAlign: TextAlign.left,),
+
+              const SizedBox(height: 20),
+
+              Container(
+                height: 140,
+                width: 140,
+                decoration: BoxDecoration(color: Colors.indigo[300], 
+                borderRadius: BorderRadiusGeometry.circular(60)),
+                child: CircleAvatar(
+                  radius: 60,
+                  backgroundColor: Colors.grey.shade300,
+                  backgroundImage: const AssetImage('Assets/Images/aa.png'),
+                  child: Container(
+                    height: 120,
+                    width: 120,
+
+                    alignment: Alignment(1,-1),
+                    child: Container(
+                      height: 30,
+                      width: 30,
+                      decoration: BoxDecoration(borderRadius: BorderRadiusGeometry.circular(20),
+                      color: Colors.indigoAccent[100]),
+                      alignment: Alignment.center,
+                      //color: Colors.indigoAccent,
+                      child: IconButton(
+                          onPressed: (){},
+                          icon: Icon(Icons.edit,color: Colors.white, size: 15,)),
+                    ),
+                  )),
               ),
-              SizedBox(width: 5, height: 5,),
-              Row(
-                spacing: 20,
-                children: [
-                Expanded(flex:4, child: TextField(),),
-                  Expanded(flex:1, child: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_forward_ios)),),
-              ],
-              ),
+
+
+              const SizedBox(height: 30),
+
+              buildInput("User Name"),
+              buildInput("Mobile Number"),
+              buildInput("Address"),
+              buildInput("Description", multiline: true),
+
+              const SizedBox(height: 20),
             ],
           ),
-        ),),
-        //second input
-        Padding(padding: EdgeInsetsGeometry.fromLTRB(10, 20, 5, 0),
-          child: Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                  child:  Text('Mobile Number', textAlign: TextAlign.left,),
-                ),
-                SizedBox(width: 5, height: 5,),
-                Row(
-                  spacing: 20,
-                  children: [
-                    Expanded(flex:4, child: TextField(),),
-                    Expanded(flex:1, child: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_forward_ios)),),
-                  ],
-                ),
-              ],
-            ),
-          ),),
-        //second input
-        Padding(padding: EdgeInsetsGeometry.fromLTRB(10, 20, 5, 0),
-          child: Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                  child:  Text('Address', textAlign: TextAlign.left,),
-                ),
-                SizedBox(width: 5, height: 5,),
-                Row(
-                  spacing: 20,
-                  children: [
-                    Expanded(flex:4, child: TextField(),),
-                    Expanded(flex:1, child: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_forward_ios)),),
-                  ],
-                ),
-              ],
-            ),
-          ),),
-
-        //second input
-        Padding(padding: EdgeInsetsGeometry.fromLTRB(10, 20, 5, 0),
-          child: Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                  child:  Text('Description', textAlign: TextAlign.left,),
-                ),
-                SizedBox(width: 5, height: 5,),
-                Row(
-                  spacing: 20,
-                  children: [
-                    Expanded(flex:4, child: TextField(),),
-                    Expanded(flex:1, child: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_forward_ios)),),
-                  ],
-                ),
-              ],
-            ),
-          ),),
-        ],)
-
+        ),
       ),
     );
   }
 }
+
+
+
