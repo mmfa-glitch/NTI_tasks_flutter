@@ -1,48 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_review/InSessionTasks/WidgetsFile/App_CustomisedWidgets_V.dart' as wb;
+import 'package:flutter_review/GTasks/PickDate.dart';
 
 class Userprofile extends StatelessWidget {
 
-  Widget buildInput(String label, {bool multiline = false}) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-
-          Text(label, style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.indigo[800],),),
-
-          const SizedBox(height: 6),
-
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            decoration: BoxDecoration(
-              color: Colors.grey.shade200,
-              borderRadius: BorderRadius.circular(12),
-            ),
-
-            child: Row(
-              children: [
-
-                Expanded(
-                  child: TextField(
-                    maxLines: multiline ? 4 : 1,
-                    decoration: const InputDecoration(
-                      border: InputBorder.none,
-                    ),
-                  ),
-                ),
-
-                IconButton(
-                  icon: Icon(Icons.arrow_forward_ios, size: 16, color: Colors.indigo[800],),
-                  onPressed: () {},
-                )
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
+  wb.AppCustomisedwidgetsV widgetsBuilder = new wb.AppCustomisedwidgetsV();
 
   @override
   Widget build(BuildContext context) {
@@ -97,12 +59,14 @@ class Userprofile extends StatelessWidget {
 
               const SizedBox(height: 30),
 
-              buildInput("User Name"),
-              buildInput("Mobile Number"),
-              buildInput("Address"),
-              buildInput("Description", multiline: true),
-
-              const SizedBox(height: 20),
+              widgetsBuilder.buildInput("User Name"),
+              widgetsBuilder.buildInput("Mobile Number"),
+              widgetsBuilder.buildInput("Address"),
+              widgetsBuilder.buildInput("Description", multiline: true),
+              widgetsBuilder.buildInput('Whatever this section is!!'),
+              PickDate(),
+              const SizedBox(height: 50),
+              widgetsBuilder.CustomisedElevatedButtonFunction("Save", ()=> widgetsBuilder.TextingFunction('Saved',context))
             ],
           ),
         ),
