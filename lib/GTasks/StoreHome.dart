@@ -8,6 +8,8 @@ import 'package:flutter_review/GTasks/EmptyScreen.dart';
 import 'package:flutter_review/GTasks/StoreHomeScreen.dart';
 import 'package:flutter_review/GTasks/PersonalProfile.dart';
 import 'package:flutter_review/InSessionTasks/UserProfile.dart';
+import 'package:flutter_review/OrdersAndStoreHomeScreen/OrdersScreen.dart';
+
 class StoreHome extends StatefulWidget {
   @override
   StoreHomeScreenState createState() => StoreHomeScreenState();
@@ -18,7 +20,7 @@ class StoreHomeScreenState extends State<StoreHome> {
   final List<Widget> pages = [
     Storehomescreen(),
     Emptyscreen(),
-    Emptyscreen(),
+    Ordersscreen(),
     Personalprofile(),
   ];
   @override
@@ -52,7 +54,7 @@ class StoreHomeScreenState extends State<StoreHome> {
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
             BottomNavigationBarItem(icon: Icon(Icons.store), label: "Store"),
-            BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Wishlist"),
+            BottomNavigationBarItem(icon: Icon(Icons.add_shopping_cart_rounded), label: "Cart"),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
           ],
         ),]

@@ -15,12 +15,12 @@ class Signinupmainscreen extends StatelessWidget
       body: Stack(
         children: [
           Positioned(
-            child: Image.asset('Assets/Images/Bg2.png', fit: BoxFit.cover, width: double.infinity,),
+            child: Image.asset('Assets/Images/Bg2.png', fit: BoxFit.cover, height: screenSize.height*0.7, width:screenSize.width,),
           ),
           Column(
             children: [
               const SizedBox(height: 40,),
-              Center(child: Image.asset('Assets/Images/logo.png', fit: BoxFit.cover, width: screenSize.width * 0.8,),),
+              Center(child: Image.asset('Assets/Images/logo.png', fit: BoxFit.cover, height: screenSize.height*0.2, width: screenSize.width * 0.8,),),
               const SizedBox(height: 40,),
 
               Expanded(
@@ -31,14 +31,16 @@ class Signinupmainscreen extends StatelessWidget
                       width:  screenSize.width,
                       padding: EdgeInsets.all(30),
                       decoration: BoxDecoration(color: Colors.red[400], borderRadius: BorderRadius.vertical(top: Radius.circular(30))),
-                      child: Column(children: [
-                          const SizedBox(height: 20,),
-                          acwv.ArabicText('أهلاً بك في مؤسسة المسار \n للفئات الخاصة'),
-                          const SizedBox(height: 80,),
-                          acwv.CustomisedArabicElevatedButtonContext('سجل الدخول', context, SigninScreen(), buttonColour: Colors.white70, textColour: Colors.deepOrange[800]!),
-                          const SizedBox(height: 20,),
-                          acwv.CustomisedArabicElevatedButtonContext('إنشاء حساب', context, SignupScreen(), buttonColour: Colors.white70, textColour: Colors.deepOrange[800]!),
-                        ],),
+                      child: SingleChildScrollView(
+                        child: Column(children: [
+                            const SizedBox(height: 20,),
+                            acwv.ArabicText('أهلاً بك في مؤسسة المسار \n للفئات الخاصة'),
+                            const SizedBox(height: 80,),
+                            acwv.CustomisedArabicElevatedButtonContext('سجل الدخول', context, SigninScreen(), buttonColour: Colors.white70, textColour: Colors.deepOrange[800]!),
+                            const SizedBox(height: 20,),
+                            acwv.CustomisedArabicElevatedButtonContext('إنشاء حساب', context, SignupScreen(), buttonColour: Colors.white70, textColour: Colors.deepOrange[800]!),
+                          ],),
+                      ),
 
                       ),
                 ),

@@ -192,4 +192,17 @@ class AppCustomisedwidgetsV {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
   }
 
+  ////SubTotalText
+  Widget SubTotalOrderRowText({String label='', double totalValue=0, bool isBold=false}){
+    return Padding(
+      padding: EdgeInsetsGeometry.symmetric(vertical: 5),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(label, style: TextStyle(color: Colors.white, fontWeight: isBold ? FontWeight.bold : FontWeight.normal),),
+          Text('LE $totalValue', style: TextStyle(color: Colors.white, fontWeight: isBold ? FontWeight.bold : FontWeight.normal),),
+        ],
+      ),
+    );
+  }
 }
